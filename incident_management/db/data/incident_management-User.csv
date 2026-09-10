@@ -1,0 +1,5 @@
+ID;userName;firstName;lastName;dateOfBirth;email;role
+30000000-0000-4000-8000-000000000001;anna.schmidt;Anna;Schmidt;1992-04-15;anna.schmidt@example.com;USER
+30000000-0000-4000-8000-000000000002;max.mustermann;Max;Mustermann;1987-09-23;max.mustermann@example.com;USER
+30000000-0000-4000-8000-000000000003;lisa.weber;Lisa;Weber;1984-01-08;lisa.weber@example.com;ADMIN
+30000000-0000-4000-8000-000000000004;tom.becker;Tom;Becker;1979-11-30;tom.becker@example.com;ADMIN

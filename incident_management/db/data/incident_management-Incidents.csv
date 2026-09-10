@@ -1,0 +1,7 @@
+ID;title;description;priority;reportedBy_ID;incidentStatus_ID
+20000000-0000-4000-8000-000000000001;VPN-Verbindung nicht möglich;Seit dem letzten Client-Update kann keine VPN-Verbindung mehr hergestellt werden.;HIGH;30000000-0000-4000-8000-000000000001;10000000-0000-4000-8000-000000000001
+20000000-0000-4000-8000-000000000002;Drucker nicht erreichbar;Der Netzwerkdrucker im zweiten Stock antwortet nicht.;MEDIUM;30000000-0000-4000-8000-000000000002;10000000-0000-4000-8000-000000000002
+20000000-0000-4000-8000-000000000003;Passwort zurücksetzen;Das Benutzerpasswort wurde vergessen und muss zurückgesetzt werden.;LOW;30000000-0000-4000-8000-000000000001;10000000-0000-4000-8000-000000000003
+20000000-0000-4000-8000-000000000004;Produktivsystem nicht erreichbar;Das Produktivsystem liefert beim Aufruf einen HTTP-503-Fehler.;HIGH;30000000-0000-4000-8000-000000000003;10000000-0000-4000-8000-000000000002
+20000000-0000-4000-8000-000000000005;Fehlerhafte Dashboard-Darstellung;Ein Diagramm wird bei kleinen Bildschirmauflösungen abgeschnitten.;MEDIUM;30000000-0000-4000-8000-000000000002;10000000-0000-4000-8000-000000000001
+20000000-0000-4000-8000-000000000006;Veralteter Benutzereintrag;Ein ausgeschiedener Mitarbeiter wird weiterhin im Benutzerverzeichnis angezeigt.;LOW;30000000-0000-4000-8000-000000000004;10000000-0000-4000-8000-000000000004
