@@ -1,0 +1,28 @@
+{
+  "generationParameters": {
+    "generationDate": "Thu Sep 10 2026 10:20:22 GMT+0200 (Mitteleuropäische Sommerzeit)",
+    "generatorPlatform": "Visual Studio Code",
+    "serviceType": "Local CAP",
+    "metadataFilename": "",
+    "serviceUrl": "http://localhost:4004/service/UserService/",
+    "appName": "user_management_app",
+    "appTitle": "user management",
+    "appDescription": "App zum verwalten von Nutzern des InicidentManagments.",
+    "appNamespace": "user_management",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.152.0",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.32.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "User"
+      }
+    ],
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/usermanagement.usermanagementapp/index.html"
+  }
+}

@@ -44,5 +44,9 @@
     "app/*"
   ],
   "scripts": {
-  }
+    "watch-user_management_app": "cds watch --open usermanagement.usermanagementapp/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "sapux": [
+    "app/user_management_app"
+  ]
 }
