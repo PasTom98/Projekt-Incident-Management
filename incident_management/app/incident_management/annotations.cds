@@ -18,6 +18,26 @@ annotate service.Incidents with @(
                 Label : 'priority',
                 Value : priority,
             },
+            {
+                $Type : 'UI.DataField',
+                Value : reporter,
+                Label : 'reporter',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : statusName,
+                Label : 'statusName',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : workingUser,
+                Label : 'workingUser',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : incidentStatus_ID,
+                Label : 'incidentStatus_ID',
+            },
         ],
     },
     UI.Facets : [
@@ -26,6 +46,18 @@ annotate service.Incidents with @(
             ID : 'GeneratedFacet1',
             Label : 'General Information',
             Target : '@UI.FieldGroup#GeneratedGroup',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Linked Information',
+            ID : 'LinkedInformation',
+            Target : '@UI.FieldGroup#LinkedInformation',
+        },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Managed Information',
+            ID : 'ManagedInformation',
+            Target : '@UI.FieldGroup#ManagedInformation',
         },
     ],
     UI.LineItem : [
@@ -44,6 +76,91 @@ annotate service.Incidents with @(
             Label : 'priority',
             Value : priority,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : reporter,
+            Label : 'reporter',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : statusName,
+            Label : 'statusName',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : workingUser,
+            Label : 'workingUser',
+        },
     ],
+    UI.FieldGroup #ManagedInformation : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : createdAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdBy,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
+            },
+        ],
+    },
+    UI.HeaderInfo : {
+        TypeName : '',
+        TypeNamePlural : '',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : title,
+        },
+        Description : {
+            $Type : 'UI.DataField',
+            Value : description,
+        },
+    },
+    UI.FieldGroup #LinkedInformation : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : incidentStatus_ID,
+                Label : 'incidentStatus_ID',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : isWorkedOnBy_ID,
+                Label : 'isWorkedOnBy_ID',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : reportedBy_ID,
+                Label : 'reportedBy_ID',
+            },
+        ],
+    },
 );
+
+annotate service.Incidents with {
+    incidentStatus @(
+        Common.ValueList: {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'IncidentStatus',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : incidentStatus_ID,
+                    ValueListProperty : 'Status_ID',
+                },
+            ]
+        },
+        )
+};
+
 

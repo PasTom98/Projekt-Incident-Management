@@ -4,5 +4,10 @@ using { incident_management as db } from '../db/schema';
 @path: '/service/IncidentManagementService'
 service IncidentManagementService {
     @odata.draft.enabled
-    entity Incidents as projection on db.Incidents;
+    entity Incidents as projection on db.Incidents {
+        *,
+        virtual null as statusName : String,
+        virtual null as workingUser : String,
+        virtual null as reporter : String
+    };
 }
