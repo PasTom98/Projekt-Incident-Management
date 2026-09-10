@@ -45,10 +45,12 @@
   ],
   "scripts": {
     "watch-user_management_app": "cds watch --open usermanagement.usermanagementapp/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "watch-incident_status_app": "cds watch --open incidentstatus.incidentstatusapp/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-incident_status_app": "cds watch --open incidentstatus.incidentstatusapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-incident_management": "cds watch --open incidentmanagement.incidentmanagement/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "sapux": [
     "app/user_management_app",
-    "app/incident_status_app"
+    "app/incident_status_app",
+    "app/incident_management"
   ]
 }
