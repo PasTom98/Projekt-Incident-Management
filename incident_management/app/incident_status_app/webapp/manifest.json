@@ -127,7 +127,8 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/IncidentStatus"
+              "contextPath": "/IncidentStatus",
+              "sectionLayout": "Tabs"
             }
           }
         }
