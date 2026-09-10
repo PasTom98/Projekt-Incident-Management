@@ -16,12 +16,14 @@ entity Incidents : cuid, managed {
     description    : String(1000);
     priority       : IncidentPriority;
     reportedBy   : Association to User;
+    isWorkedOnBy : Association to User;
     incidentStatus : Association to IncidentStatus;
 }
 
 entity IncidentStatus : cuid, managed {
     status      : String(20);
     description : String(100);
+    incidents   : Association to many Incidents on incidents.incidentStatus = $self;
 }
 
 aspect Person {
@@ -40,4 +42,5 @@ entity User : Person, cuid, managed {
     userName : String(100);
     email    : String(100);
     role     : UserRole;
+    worksOnIncidents : Association to many Incidents on worksOnIncidents.isWorkedOnBy = $self;
 }
