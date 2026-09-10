@@ -47,6 +47,12 @@ annotate service.User with @(
             Label : 'General Information',
             Target : '@UI.FieldGroup#GeneratedGroup',
         },
+        {
+            $Type : 'UI.ReferenceFacet',
+            Label : 'Managed information',
+            ID : 'Managedinformation',
+            Target : '@UI.FieldGroup#Managedinformation',
+        },
     ],
     UI.LineItem : [
         {
@@ -75,5 +81,38 @@ annotate service.User with @(
             Value : userName,
         },
     ],
+    UI.FieldGroup #Managedinformation : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Value : createdAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdBy,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
+            },
+        ],
+    },
+    UI.HeaderInfo : {
+        Title : {
+            $Type : 'UI.DataField',
+            Value : userName,
+        },
+        TypeName : '',
+        TypeNamePlural : '',
+        Description : {
+            $Type : 'UI.DataField',
+            Value : ID,
+        },
+    },
 );
 
