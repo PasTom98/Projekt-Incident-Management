@@ -1,42 +1,52 @@
 {
-    "name": "incident_management",
-    "version": "1.0.0",
-    "type": "module",
-    "dependencies": {
-        "@sap/cds": "^10"
-    },
-    "devDependencies": {
-        "@cap-js/sqlite": "^3",
-        "cds-plugin-ui5": "^0.17.0"
-    },
-    "cds": {
-        "requires": {
-            "auth": {
-                "[development]": {
-                    "kind": "dummy"
-                },
-                "[hybrid]": {
-                    "kind": "mocked",
-                    "users": {
-                        "Admin": {
-                            "id": "admin",
-                            "name": "Administrator",
-                            "password": "admin",
-                            "roles": ["admin"]
-                        },
-                        "User": {
-                            "id": "user",
-                            "name": "User",
-                            "password": "user",
-                            "roles": ["user"]
-                        }
-                    }
-                }
+  "name": "incident_management",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@sap/cds": "^10"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "cds": {
+    "requires": {
+      "auth": {
+        "[development]": {
+          "kind": "dummy"
+        },
+        "[hybrid]": {
+          "kind": "mocked",
+          "users": {
+            "Admin": {
+              "id": "admin",
+              "name": "Administrator",
+              "password": "admin",
+              "roles": [
+                "admin"
+              ]
+            },
+            "User": {
+              "id": "user",
+              "name": "User",
+              "password": "user",
+              "roles": [
+                "user"
+              ]
             }
+          }
         }
-    },
-    "private": true,
-    "workspaces": [
-        "app/*"
-    ]
+      }
+    }
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "scripts": {
+    "watch-admin_app": "cds watch --open adminapp.adminapp/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "sapux": [
+    "app/admin_app"
+  ]
 }

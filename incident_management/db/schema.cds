@@ -29,7 +29,7 @@ entity IncidentStatus : cuid, managed {
 aspect Person {
     firstName   : String(50);
     lastName    : String(50);
-    fullName    : String = firstName + ' ' + lastName;
+    fullName    : String = firstName || ' ' || lastName;
     dateOfBirth : Date;
 }
 
