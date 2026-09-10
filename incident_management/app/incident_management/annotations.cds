@@ -25,18 +25,13 @@ annotate service.Incidents with @(
             },
             {
                 $Type : 'UI.DataField',
-                Value : statusName,
-                Label : 'statusName',
-            },
-            {
-                $Type : 'UI.DataField',
                 Value : workingUser,
                 Label : 'workingUser',
             },
             {
                 $Type : 'UI.DataField',
                 Value : incidentStatus_ID,
-                Label : 'incidentStatus_ID',
+                Label : 'Status',
             },
         ],
     },
@@ -156,11 +151,58 @@ annotate service.Incidents with {
                 {
                     $Type : 'Common.ValueListParameterInOut',
                     LocalDataProperty : incidentStatus_ID,
-                    ValueListProperty : 'Status_ID',
+                    ValueListProperty : 'ID',
                 },
             ]
         },
+        Common.ExternalID : incidentStatus.status,
         )
 };
 
+annotate service.Incidents with {
+    isWorkedOnBy @(
+        Common.ValueList: {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'User',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : fullName,
+                    ValueListProperty : 'isWorkedOnBy',
+                },
+            ]
+        },
+        Common.ExternalID : isWorkedOnBy.fullName,
+    )
+};
+
+annotate service.Incidents with {
+    reportedBy @(
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'User',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : fullName,
+                    ValueListProperty : 'reportedBy'
+                },
+            ]
+        }
+    )
+};
+
+
+
+annotate service.Incidents with {
+    reportedBy @Common.ExternalID : reportedBy.fullName
+};
+
+annotate service.Incidents with {
+    reporter @Common.ExternalID : reportedBy.fullName
+};
+
+annotate service.Incidents with {
+    workingUser @Common.ExternalID : isWorkedOnBy.fullName
+};
 
