@@ -21,8 +21,8 @@ entity Incidents : cuid, managed {
 }
 
 entity IncidentStatus : cuid, managed {
-    status      : String(20);
-    description : String(100);
+    status      : String(20) @mandatory;
+    description : String(100) @mandatory;
     incidents   : Association to many Incidents on incidents.incidentStatus = $self;
 }
 
