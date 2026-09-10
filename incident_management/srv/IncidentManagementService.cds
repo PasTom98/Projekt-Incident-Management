@@ -14,4 +14,5 @@ service IncidentManagementService {
     entity IncidentStatus as projection on db.IncidentStatus;
     @readonly
     entity User as projection on db.User;
+    entity IncidentPriority as projection on db.IncidentPriority;
 }

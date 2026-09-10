@@ -5,16 +5,14 @@ using {
     managed
 } from '@sap/cds/common';
 
-type IncidentPriority : String(20) enum {
-    low = 'LOW';
-    medium = 'MEDIUM';
-    high = 'HIGH';
+entity IncidentPriority : cuid {
+    text : String(20) @mandatory;
 }
 
 entity Incidents : cuid, managed {
     title          : String(100) @mandatory;
     description    : String(1000) @mandatory;
-    priority       : IncidentPriority;
+    priority       : Association to IncidentPriority;
     reportedBy   : Association to User;
     isWorkedOnBy : Association to User;
     incidentStatus : Association to IncidentStatus;

@@ -1,142 +1,143 @@
 using IncidentManagementService as service from '../../srv/IncidentManagementService';
+
 annotate service.Incidents with @(
-    UI.FieldGroup #GeneratedGroup : {
-        $Type : 'UI.FieldGroupType',
+    UI.FieldGroup #GeneratedGroup    : {
+        $Type: 'UI.FieldGroupType',
         Data : [
             {
-                $Type : 'UI.DataField',
-                Label : 'title',
-                Value : title,
+                $Type: 'UI.DataField',
+                Label: 'title',
+                Value: title,
+            },
+            {
+                $Type: 'UI.DataField',
+                Label: 'description',
+                Value: description,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'description',
-                Value : description,
+                Value : priority_ID,
+                Label : 'priority_ID',
             },
             {
-                $Type : 'UI.DataField',
-                Label : 'priority',
-                Value : priority,
+                $Type: 'UI.DataField',
+                Value: reporter,
+                Label: 'reporter',
             },
             {
-                $Type : 'UI.DataField',
-                Value : reporter,
-                Label : 'reporter',
+                $Type: 'UI.DataField',
+                Value: workingUser,
+                Label: 'workingUser',
             },
             {
-                $Type : 'UI.DataField',
-                Value : workingUser,
-                Label : 'workingUser',
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : incidentStatus_ID,
-                Label : 'Status',
+                $Type: 'UI.DataField',
+                Value: incidentStatus_ID,
+                Label: 'Status',
             },
         ],
     },
-    UI.Facets : [
+    UI.Facets                        : [
         {
             $Type : 'UI.ReferenceFacet',
-            ID : 'GeneratedFacet1',
+            ID    : 'GeneratedFacet1',
             Label : 'General Information',
-            Target : '@UI.FieldGroup#GeneratedGroup',
+            Target: '@UI.FieldGroup#GeneratedGroup',
         },
         {
             $Type : 'UI.ReferenceFacet',
             Label : 'Linked Information',
-            ID : 'LinkedInformation',
-            Target : '@UI.FieldGroup#LinkedInformation',
+            ID    : 'LinkedInformation',
+            Target: '@UI.FieldGroup#LinkedInformation',
         },
         {
             $Type : 'UI.ReferenceFacet',
             Label : 'Managed Information',
-            ID : 'ManagedInformation',
-            Target : '@UI.FieldGroup#ManagedInformation',
+            ID    : 'ManagedInformation',
+            Target: '@UI.FieldGroup#ManagedInformation',
         },
     ],
-    UI.LineItem : [
+    UI.LineItem                      : [
         {
-            $Type : 'UI.DataField',
-            Label : 'title',
-            Value : title,
+            $Type: 'UI.DataField',
+            Label: 'title',
+            Value: title,
         },
         {
-            $Type : 'UI.DataField',
-            Label : 'description',
-            Value : description,
+            $Type: 'UI.DataField',
+            Label: 'description',
+            Value: description,
         },
         {
-            $Type : 'UI.DataField',
-            Label : 'priority',
-            Value : priority,
+            $Type: 'UI.DataField',
+            Label: 'priority',
+            Value: priority,
         },
         {
-            $Type : 'UI.DataField',
-            Value : reporter,
-            Label : 'reporter',
+            $Type: 'UI.DataField',
+            Value: reporter,
+            Label: 'reporter',
         },
         {
-            $Type : 'UI.DataField',
-            Value : statusName,
-            Label : 'statusName',
+            $Type: 'UI.DataField',
+            Value: statusName,
+            Label: 'statusName',
         },
         {
-            $Type : 'UI.DataField',
-            Value : workingUser,
-            Label : 'workingUser',
+            $Type: 'UI.DataField',
+            Value: workingUser,
+            Label: 'workingUser',
         },
     ],
-    UI.FieldGroup #ManagedInformation : {
-        $Type : 'UI.FieldGroupType',
+    UI.FieldGroup #ManagedInformation: {
+        $Type: 'UI.FieldGroupType',
         Data : [
             {
-                $Type : 'UI.DataField',
-                Value : createdAt,
+                $Type: 'UI.DataField',
+                Value: createdAt,
             },
             {
-                $Type : 'UI.DataField',
-                Value : createdBy,
+                $Type: 'UI.DataField',
+                Value: createdBy,
             },
             {
-                $Type : 'UI.DataField',
-                Value : modifiedAt,
+                $Type: 'UI.DataField',
+                Value: modifiedAt,
             },
             {
-                $Type : 'UI.DataField',
-                Value : modifiedBy,
+                $Type: 'UI.DataField',
+                Value: modifiedBy,
             },
         ],
     },
-    UI.HeaderInfo : {
-        TypeName : '',
-        TypeNamePlural : '',
-        Title : {
-            $Type : 'UI.DataField',
-            Value : title,
+    UI.HeaderInfo                    : {
+        TypeName      : '',
+        TypeNamePlural: '',
+        Title         : {
+            $Type: 'UI.DataField',
+            Value: title,
         },
-        Description : {
-            $Type : 'UI.DataField',
-            Value : description,
+        Description   : {
+            $Type: 'UI.DataField',
+            Value: description,
         },
     },
     UI.FieldGroup #LinkedInformation : {
-        $Type : 'UI.FieldGroupType',
+        $Type: 'UI.FieldGroupType',
         Data : [
             {
-                $Type : 'UI.DataField',
-                Value : incidentStatus_ID,
-                Label : 'incidentStatus_ID',
+                $Type: 'UI.DataField',
+                Value: incidentStatus_ID,
+                Label: 'incidentStatus_ID',
             },
             {
-                $Type : 'UI.DataField',
-                Value : isWorkedOnBy_ID,
-                Label : 'isWorkedOnBy_ID',
+                $Type: 'UI.DataField',
+                Value: isWorkedOnBy_ID,
+                Label: 'isWorkedOnBy_ID',
             },
             {
-                $Type : 'UI.DataField',
-                Value : reportedBy_ID,
-                Label : 'reportedBy_ID',
+                $Type: 'UI.DataField',
+                Value: reportedBy_ID,
+                Label: 'reportedBy_ID',
             },
         ],
     },
@@ -144,65 +145,78 @@ annotate service.Incidents with @(
 
 annotate service.Incidents with {
     incidentStatus @(
-        Common.ValueList: {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'IncidentStatus',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : incidentStatus_ID,
-                    ValueListProperty : 'ID',
-                },
-            ]
+        Common.ValueList : {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'IncidentStatus',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: incidentStatus_ID,
+                ValueListProperty: 'status',
+            }, ]
         },
-        Common.ExternalID : incidentStatus.status,
-        )
+        Common.ExternalID: incidentStatus.status,
+    )
 };
 
 annotate service.Incidents with {
     isWorkedOnBy @(
-        Common.ValueList: {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'User',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : fullName,
-                    ValueListProperty : 'isWorkedOnBy',
-                },
-            ]
+        Common.ValueList : {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'User',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: isWorkedOnBy_ID,
+                ValueListProperty: 'fullName',
+            }, ]
         },
-        Common.ExternalID : isWorkedOnBy.fullName,
+        Common.ExternalID: isWorkedOnBy.fullName,
     )
 };
 
 annotate service.Incidents with {
     reportedBy @(
-        Common.ValueList : {
-            $Type : 'Common.ValueListType',
-            CollectionPath : 'User',
-            Parameters : [
-                {
-                    $Type : 'Common.ValueListParameterInOut',
-                    LocalDataProperty : fullName,
-                    ValueListProperty : 'reportedBy'
-                },
-            ]
-        }
+        Common.ValueList: {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'User',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: reportedBy_ID,
+                ValueListProperty: 'fullName'
+            }, ]
+        },
+        Common.Text     : reportedBy.fullName,
     )
 };
 
+annotate service.Incidents with {
+    priority @(
+        Common.ValueList: {
+            $Type         : 'Common.ValueListType',
+            CollectionPath: 'IncidentPriority',
+            Parameters    : [{
+                $Type            : 'Common.ValueListParameterInOut',
+                LocalDataProperty: priority_ID,
+                ValueListProperty: 'text'
+            }, ]
+        },
+        Common.Text : priority.text,
+    )
+} ;
+
 
 
 annotate service.Incidents with {
-    reportedBy @Common.ExternalID : reportedBy.fullName
+    reportedBy @Common.ExternalID: reportedBy.fullName
 };
 
 annotate service.Incidents with {
-    reporter @Common.ExternalID : reportedBy.fullName
+    reporter @Common.ExternalID: reportedBy.fullName
 };
 
 annotate service.Incidents with {
-    workingUser @Common.ExternalID : isWorkedOnBy.fullName
+    workingUser @Common.ExternalID: isWorkedOnBy.fullName
+};
+annotate service.Incidents with {
+    priority @Common.ExternalID : priority.text
 };
 

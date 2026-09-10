@@ -1,5 +1,5 @@
-firstName,lastName,dateOfBirth,ID,createdAt,createdBy,modifiedAt,modifiedBy,userName,email,role
-Anna,Schmidt,1992-04-15,30000000-0000-4000-8000-000000000001,2026-09-10T07:53:26.939Z,anonymous,2026-09-10T07:53:26.939Z,anonymous,anna.schmidt,anna.schmidt@example.com,USER
-Max,Mustermann,1987-09-23,30000000-0000-4000-8000-000000000002,2026-09-10T07:53:26.939Z,anonymous,2026-09-10T07:53:26.939Z,anonymous,max.mustermann,max.mustermann@example.com,USER
-Lisa,Weber,1984-01-08,30000000-0000-4000-8000-000000000003,2026-09-10T07:53:26.939Z,anonymous,2026-09-10T07:53:26.939Z,anonymous,lisa.weber,lisa.weber@example.com,ADMIN
-Tom,Becker,1979-11-30,30000000-0000-4000-8000-000000000004,2026-09-10T07:53:26.939Z,anonymous,2026-09-10T07:53:26.939Z,anonymous,tom.becker,tom.becker@example.com,ADMIN
+firstName,lastName,dateOfBirth,ID,userName,email,role
+Anna,Schmidt,1992-04-15,30000000-0000-4000-8000-000000000001,anna.schmidt,anna.schmidt@example.com,USER
+Max,Mustermann,1987-09-23,30000000-0000-4000-8000-000000000002,max.mustermann,max.mustermann@example.com,USER
+Lisa,Weber,1984-01-08,30000000-0000-4000-8000-000000000003,lisa.weber,lisa.weber@example.com,ADMIN
+Tom,Becker,1979-11-30,30000000-0000-4000-8000-000000000004,tom.becker,tom.becker@example.com,ADMIN
