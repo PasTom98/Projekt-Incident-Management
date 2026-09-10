@@ -10,4 +10,9 @@ service IncidentManagementService {
         virtual null as workingUser : String,
         virtual null as reporter : String
     };
+    @readonly
+    entity IncidentStatus as projection on db.IncidentStatus;
+    @readonly
+    entity User as projection on db.User;
+    entity IncidentPriority as projection on db.IncidentPriority;
 }

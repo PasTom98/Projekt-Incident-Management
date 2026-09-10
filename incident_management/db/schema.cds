@@ -5,16 +5,14 @@ using {
     managed
 } from '@sap/cds/common';
 
-type IncidentPriority : String(20) enum {
-    low = 'LOW';
-    medium = 'MEDIUM';
-    high = 'HIGH';
+entity IncidentPriority : cuid {
+    text : String(20) @mandatory;
 }
 
 entity Incidents : cuid, managed {
-    title          : String(100);
-    description    : String(1000);
-    priority       : IncidentPriority;
+    title          : String(100) @mandatory;
+    description    : String(1000) @mandatory;
+    priority       : Association to IncidentPriority;
     reportedBy   : Association to User;
     isWorkedOnBy : Association to User;
     incidentStatus : Association to IncidentStatus;
@@ -27,10 +25,10 @@ entity IncidentStatus : cuid, managed {
 }
 
 aspect Person {
-    firstName   : String(50);
-    lastName    : String(50);
+    firstName   : String(50) @mandatory;
+    lastName    : String(50) @mandatory;
     fullName    : String = firstName || ' ' || lastName;
-    dateOfBirth : Date;
+    dateOfBirth : Date @mandatory;
 }
 
 type UserRole : String(50) enum {
@@ -39,8 +37,8 @@ type UserRole : String(50) enum {
 }
 
 entity User : Person, cuid, managed {
-    userName : String(100);
-    email    : String(100);
+    userName : String(100) @mandatory;
+    email    : String(100) @mandatory;
     role     : UserRole;
     worksOnIncidents : Association to many Incidents on worksOnIncidents.isWorkedOnBy = $self;
 }

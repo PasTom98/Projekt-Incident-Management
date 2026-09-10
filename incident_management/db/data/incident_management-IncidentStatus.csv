@@ -1,5 +1,5 @@
-ID,createdAt,createdBy,modifiedAt,modifiedBy,status,description
-10000000-0000-4000-8000-000000000001,2026-09-10T07:53:26.944Z,anonymous,2026-09-10T07:53:26.944Z,anonymous,OPEN,Incident wurde erfasst und noch nicht bearbeitet.
-10000000-0000-4000-8000-000000000002,2026-09-10T07:53:26.944Z,anonymous,2026-09-10T07:53:26.944Z,anonymous,IN_PROGRESS,Incident wird aktuell analysiert oder bearbeitet.
-10000000-0000-4000-8000-000000000003,2026-09-10T07:53:26.944Z,anonymous,2026-09-10T07:53:26.944Z,anonymous,RESOLVED,Die Ursache wurde behoben.
-10000000-0000-4000-8000-000000000004,2026-09-10T07:53:26.944Z,anonymous,2026-09-10T07:53:26.944Z,anonymous,CLOSED,Incident wurde geprüft und abgeschlossen.
+ID,status,description
+10000000-0000-4000-8000-000000000001,OPEN,Incident wurde erfasst und noch nicht bearbeitet.
+10000000-0000-4000-8000-000000000002,IN_PROGRESS,Incident wird aktuell analysiert oder bearbeitet.
+10000000-0000-4000-8000-000000000003,RESOLVED,Die Ursache wurde behoben.
+10000000-0000-4000-8000-000000000004,CLOSED,Incident wurde geprüft und abgeschlossen.
