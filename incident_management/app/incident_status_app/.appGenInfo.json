@@ -1,0 +1,28 @@
+{
+  "generationParameters": {
+    "generationDate": "Thu Sep 10 2026 10:21:48 GMT+0200 (Mitteleuropäische Sommerzeit)",
+    "generatorPlatform": "Visual Studio Code",
+    "serviceType": "Local CAP",
+    "metadataFilename": "",
+    "serviceUrl": "http://localhost:4004/service/IncidentStatusManagementService/",
+    "appName": "incident_status_app",
+    "appTitle": "Incident Status Management App",
+    "appDescription": "App zum verwalten der Incident Status.",
+    "appNamespace": "incident_status",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.152.0",
+    "enableEslint": true,
+    "enableTypeScript": false,
+    "showMockDataInfo": false,
+    "generatorVersion": "1.32.0",
+    "template": "List Report Page V4",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [
+      {
+        "type": "Main Entity",
+        "value": "IncidentStatus"
+      }
+    ],
+    "launchText": "To launch the generated app, start your CAP project:  and navigate to the following location in your browser:\n\nhttp://localhost:4004/incidentstatus.incidentstatusapp/index.html"
+  }
+}
