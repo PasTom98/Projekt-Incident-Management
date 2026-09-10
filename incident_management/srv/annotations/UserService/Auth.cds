@@ -1,3 +1,3 @@
 using { UserService as user } from '../../UserService';
 
-annotate UserService with @requires : 'authenticated-user';
+annotate UserService with @requires : 'admin';
