@@ -15,7 +15,7 @@ entity Incidents : cuid, managed {
     priority       : Association to IncidentPriority;
     reportedBy   : Association to User;
     isWorkedOnBy : Association to User;
-    incidentStatus : Association to IncidentStatus;
+    incidentStatus : Association to one IncidentStatus;
 }
 
 entity IncidentStatus : cuid, managed {
