@@ -1,6 +1,6 @@
 using { incident_management as db } from '../db/schema';
 
-@impl: './handler/AdminIncidentHandlers.js'
+@impl: './handler/AdminService.js'
 @path: '/admin/AdminService'
 service AdminService {
     @odata.draft.enabled

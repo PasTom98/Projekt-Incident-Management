@@ -44,9 +44,11 @@
     "app/*"
   ],
   "scripts": {
-    "watch-admin_app": "cds watch --open adminapp.adminapp/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-admin_app": "cds watch --open adminapp.adminapp/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-user_app": "cds watch --open userapp.userapp/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "sapux": [
-    "app/admin_app"
+    "app/admin_app",
+    "app/user_app"
   ]
 }
