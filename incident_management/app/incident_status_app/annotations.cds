@@ -28,6 +28,16 @@ annotate service.IncidentStatus with @(
             $Type : 'UI.DataField',
             Label : 'status',
             Value : status,
+            Criticality: (case
+                              when status = 'OPEN'
+                                then 1
+                              when status = 'IN_PROGRESS'
+                                then 2
+                              when status = 'RESOLVED'
+                                then 3
+                              when status = 'CLOSED'
+                                then 0
+                          end),
         },
         {
             $Type : 'UI.DataField',

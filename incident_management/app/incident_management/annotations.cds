@@ -15,9 +15,17 @@ annotate service.Incidents with @(
                 Value: description,
             },
             {
-                $Type : 'UI.DataField',
-                Value : priority_ID,
-                Label : 'priority_ID',
+                $Type: 'UI.DataField',
+                Value: priority_ID,
+                Label: 'priority',
+                Criticality: (case
+                              when priority.text = 'HIGH'
+                                then 1
+                              when priority.text = 'MEDIUM'
+                                then 2
+                              when priority.text = 'LOW'
+                                then 3
+                          end),
             },
             {
                 $Type: 'UI.DataField',
@@ -30,9 +38,19 @@ annotate service.Incidents with @(
                 Label: 'workingUser',
             },
             {
-                $Type: 'UI.DataField',
-                Value: incidentStatus_ID,
-                Label: 'Status',
+                $Type      : 'UI.DataField',
+                Value      : incidentStatus_ID,
+                Label      : 'Status',
+                Criticality: (case
+                              when incidentStatus.status = 'OPEN'
+                                then 1
+                              when incidentStatus.status = 'IN_PROGRESS'
+                                then 2
+                              when incidentStatus.status = 'RESOLVED'
+                                then 3
+                              when incidentStatus.status = 'CLOSED'
+                                then 0
+                          end),
             },
         ],
     },
@@ -69,8 +87,16 @@ annotate service.Incidents with @(
         },
         {
             $Type: 'UI.DataField',
+            Value: priority_ID,
             Label: 'priority',
-            Value: priority,
+            Criticality: (case
+                              when priority.text = 'HIGH'
+                                then 1
+                              when priority.text = 'MEDIUM'
+                                then 2
+                              when priority.text = 'LOW'
+                                then 3
+                          end),
         },
         {
             $Type: 'UI.DataField',
@@ -79,13 +105,23 @@ annotate service.Incidents with @(
         },
         {
             $Type: 'UI.DataField',
-            Value: statusName,
-            Label: 'statusName',
-        },
-        {
-            $Type: 'UI.DataField',
             Value: workingUser,
             Label: 'workingUser',
+        },
+        {
+            $Type      : 'UI.DataField',
+            Value      : statusName,
+            Label      : 'statusName',
+            Criticality: (case
+                              when incidentStatus.status = 'OPEN'
+                                then 1
+                              when incidentStatus.status = 'IN_PROGRESS'
+                                then 2
+                              when incidentStatus.status = 'RESOLVED'
+                                then 3
+                              when incidentStatus.status = 'CLOSED'
+                                then 0
+                          end),
         },
     ],
     UI.FieldGroup #ManagedInformation: {
@@ -127,17 +163,27 @@ annotate service.Incidents with @(
             {
                 $Type: 'UI.DataField',
                 Value: incidentStatus_ID,
-                Label: 'incidentStatus_ID',
+                Label: 'Status',
+                Criticality: (case
+                              when incidentStatus.status = 'OPEN'
+                                then 1
+                              when incidentStatus.status = 'IN_PROGRESS'
+                                then 2
+                              when incidentStatus.status = 'RESOLVED'
+                                then 3
+                              when incidentStatus.status = 'CLOSED'
+                                then 0
+                          end),
             },
             {
                 $Type: 'UI.DataField',
                 Value: isWorkedOnBy_ID,
-                Label: 'isWorkedOnBy_ID',
+                Label: 'isWorkedOnBy',
             },
             {
                 $Type: 'UI.DataField',
                 Value: reportedBy_ID,
-                Label: 'reportedBy_ID',
+                Label: 'reportedBy',
             },
         ],
     },
@@ -199,10 +245,9 @@ annotate service.Incidents with {
                 ValueListProperty: 'text'
             }, ]
         },
-        Common.Text : priority.text,
+        Common.Text     : priority.text,
     )
-} ;
-
+};
 
 
 annotate service.Incidents with {
@@ -216,7 +261,11 @@ annotate service.Incidents with {
 annotate service.Incidents with {
     workingUser @Common.ExternalID: isWorkedOnBy.fullName
 };
+
 annotate service.Incidents with {
-    priority @Common.ExternalID : priority.text
+    priority @Common.ExternalID: priority.text
 };
 
+annotate service.Incidents with {
+    statusName @Common.ExternalID: incidentStatus.status
+};
